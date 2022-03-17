@@ -78,9 +78,8 @@ class Plugin extends PluginBase
 
         // Get the packages to boot
         $packages = Config::get($pluginNamespace . '::packages');
-        $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || 
-            $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-        $domainName = $_SERVER['HTTP_HOST'];
+        $protocol = (isset($_SERVER['HTTPS']) && (($_SERVER['HTTPS'] == 'on') || ($_SERVER['HTTPS'] == '1'))) || (isset($_SERVER['HTTPS']) && $_SERVER['SERVER_PORT'] == 443)?'https://':'http://';
+        $domainName = isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME']: '';
         
         // Boot each package
         foreach ($packages as $name => $options) {
