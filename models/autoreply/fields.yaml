@@ -1,0 +1,24 @@
+fields:
+    keywords:
+        label: Keywords
+        span: auto
+        type: text
+    reply:
+        label: 'Wecaht Reply'
+        size: tiny
+        span: auto
+        type: textarea
+    type:
+        label: Type
+        options:
+            text: Text
+            vedio: Vedio
+            image: Image
+            event: Event
+            voice: Voice
+            location: Coordinate
+            link: Link
+            file: File
+        span: auto
+        default: text
+        type: dropdown

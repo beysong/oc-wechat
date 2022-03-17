@@ -1,0 +1,5 @@
+<?php if ( $record->beysong_wechat_user->count() ): ?>
+    <?php foreach ( $record->beysong_wechat_user as $provider ): ?>
+        <i class="fa icon-<?= strtolower($provider->wechat_id) ?>" data-toggle='tooltip' title="<?= $provider->wechat_id ?>"></i>
+    <?php endforeach; ?>
+<?php endif;

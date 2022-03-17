@@ -1,0 +1,24 @@
+plugin:
+  name: "beysong.wechat::lang.plugin.name"
+  description: "beysong.wechat::lang.plugin.description"
+  author: beysong
+  icon: oc-icon-adjust
+  homepage: ""
+navigation:
+  main-menu-item:
+    label: Wechat
+    url: beysong/wechat/autoreply
+    icon: icon-yelp
+    sideMenu:
+      side-menu-item:
+        label: "Auto Reply"
+        url: beysong/wechat/autoreply
+        icon: icon-users
+      side-menu-item2:
+        label: "Wechat Menus"
+        url: beysong/wechat/wechatmenu
+        icon: icon-sliders
+      side-menu-item3:
+        label: Oauth User
+        url: beysong/wechat/oauthuser
+        icon: icon-sitemap

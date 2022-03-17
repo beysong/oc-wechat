@@ -1,0 +1,25 @@
+columns:
+    name:
+        label: Name
+        type: text
+    type:
+        label: Type
+        type: text
+    key:
+        label: Key
+        type: text
+    url:
+        label: Miniprogram URL
+        type: text
+    pagepath:
+        label: Miniprogram path
+        type: text
+    parent_id:
+        label: Parent ID
+        type: number
+    id:
+        label: ID
+        type: number
+    created_at:
+        label: Created Time
+        type: datetime

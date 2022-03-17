@@ -1,0 +1,56 @@
+fields:
+    name:
+        label: 'Menu Name'
+        span: auto
+        type: text
+    key:
+        label: Key
+        span: auto
+        type: text
+    type:
+        label: Type
+        options:
+            click: 'Click Type'
+            view: 'Web Page Type'
+            miniprogram: Miniprogram
+            scancode_waitmsg: 'Scan With Tips'
+            scancode_push: 'Scan With Pushing Event'
+            pic_sysphoto: 'System Taking Photo'
+            pic_photo_or_album: 'Taking Photo Or Photo Album'
+            pic_wechat: 'Wechat Photo Album'
+        span: auto
+        required: 1
+        type: dropdown
+    url:
+        label: URL
+        span: auto
+        hidden: 0
+        trigger:
+            action: show
+            field: type
+            condition: miniprogram
+        type: text
+    pagepath:
+        label: 'Miniprogram Page Path'
+        span: auto
+        hidden: 0
+        trigger:
+            action: show
+            field: type
+            condition: '[miniprogram]'
+        type: text
+    media_id:
+        label: 'Image With Text'
+        span: auto
+        type: text
+    parent_id:
+        label: 'Parent Menu'
+        emptyOption: '-- no select --'
+        showSearch: true
+        span: auto
+        placeholder: 'Please Select'
+        default: '-1'
+        dependsOn:
+            - id
+        type: dropdown
+        comment: 'Parent Menu'

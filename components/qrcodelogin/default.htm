@@ -1,0 +1,22 @@
+{% if bindeduser %}
+    <a href="javascript:void(0)" data-request="onUnbindUser">解除绑定</a>
+{% else %}
+    <a href="javascript:void(0)" onclick="bindwechat()">
+        {% if user %}
+            绑定微信
+        {% else %}
+            微信登录
+        {% endif %}
+    </a>
+{% endif %}
+
+
+<script>
+    function bindwechat(){
+        window.open(
+        `https://open.weixin.qq.com/connect/qrconnect?appid={{ __SELF__.appid }}&redirect_uri=${encodeURIComponent(window.location.origin+'/beysong/wechat/open_callback?auth_type=wechat&from=bind')}&response_type=code&scope=snsapi_login&state=STATE#wechat_redirect`,
+        'wechat',
+        'width=600,height=600,left=50%,top=50%',
+      );
+    }
+</script>

@@ -1,0 +1,5 @@
+title: AutoReply
+modelClass: Beysong\Wechat\Models\Autoreply
+nameFrom: AutoReply
+toolbar:
+    buttons: reorder_toolbar

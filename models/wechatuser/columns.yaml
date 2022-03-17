@@ -1,0 +1,22 @@
+columns:
+    id:
+        label: id
+        type: number
+    user_id:
+        label: user_id
+        type: number
+    oauth_name:
+        label: oauth_name
+        type: text
+    oauth_id:
+        label: oauth_id
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    oauth_type:
+        label: oauth_type
+        type: text

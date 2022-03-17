@@ -1,0 +1,44 @@
+<?= $this->listRender() ?>
+<a style="margin-left: 20px;" data-request="onSaveToWechat" data-request-confirm="Are you sure?" data-request-error="alert('操作失败')" data-request-success="alert('操作成功')" class="btn btn-primary btn-lg">Push To Server</a>
+
+<div class="control-list">
+<h3 style="margin-left: 20px;">Current Menu Online</h3>
+    <table class="table data" data-control="rowlink">
+        <thead>
+            <tr>
+                <th style="width: 150px"><span>Main Menu</span></th>
+                <th style="width: 150px"><span>Action</span></th>
+                <th><a href="javascript:;">Name</a></th>
+            </tr>
+        </thead>
+        <?php if(isset($menuList['menu'])):?>
+            <tbody>
+                <?php foreach ($menuList['menu']['button'] as $item):  ?>
+                <tr>
+                    <td>
+                        main menu
+                    </td>
+                    <td class="column-button nolink">
+                        <?= $item['name'] ?>
+                    </td>
+                    <td>
+                        <?= $item['name'] ?>
+                    </td>
+                </tr>
+                <?php foreach ($item['sub_button'] as $item):  ?>
+                    <tr>
+                        <td></td>
+                        <td class="column-button nolink">
+                            <?= $item['name'] ?>
+                        </td>
+                        <td>
+                            <?= $item['name'] ?>
+                        </td>
+                    </tr>
+                    <?php endforeach ?>
+                <?php endforeach ?>
+            </tbody>
+        <?php endif ?>
+    </table>
+    
+</div>

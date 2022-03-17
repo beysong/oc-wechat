@@ -1,0 +1,11 @@
+name: AutoReply
+modelClass: Beysong\Wechat\Models\Autoreply
+form: $/beysong/wechat/models/autoreply/fields.yaml
+defaultRedirect: beysong/wechat/autoreply
+create:
+    redirect: 'beysong/wechat/autoreply/update/:id'
+    redirectClose: beysong/wechat/autoreply
+update:
+    redirect: beysong/wechat/autoreply
+    redirectClose: beysong/wechat/autoreply
+preview: {  }

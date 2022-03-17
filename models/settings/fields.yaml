@@ -1,0 +1,36 @@
+tabs:
+  fields:
+    appid:
+      label: "App Id"
+      span: auto
+      type: text
+      comment: "App Id."
+      tab: "Offical Account"
+    secret:
+      label: Secret
+      span: auto
+      type: text
+      comment: Secret.
+      tab: "Offical Account"
+    token:
+      label: Token
+      span: auto
+      type: text
+      comment: Token.
+      tab: "Offical Account"
+    aes_key:
+      label: EncodingAESKey
+      span: auto
+      type: text
+      comment: EncodingAESKey.
+      tab: "Offical Account"
+    open_appid:
+      label: "App Id"
+      span: auto
+      type: text
+      tab: "Open Platform"
+    open_secret:
+      label: Secret
+      span: auto
+      type: text
+      tab: "Open Platform"

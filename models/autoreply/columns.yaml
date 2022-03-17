@@ -1,0 +1,14 @@
+columns:
+    keywords:
+        label: Keywords
+        type: text
+        searchable: true
+    reply:
+        label: Reply
+        type: text
+    created_at:
+        label: 'Created At'
+        type: datetime
+    updated_at:
+        label: 'Update At'
+        type: datetime

@@ -1,0 +1,10 @@
+name: WechatMenu
+form: $/beysong/wechat/models/wechatmenu/fields.yaml
+modelClass: Beysong\Wechat\Models\WechatMenu
+defaultRedirect: beysong/wechat/wechatmenu
+create:
+    redirect: 'beysong/wechat/wechatmenu/update/:id'
+    redirectClose: beysong/wechat/wechatmenu
+update:
+    redirect: beysong/wechat/wechatmenu
+    redirectClose: beysong/wechat/wechatmenu

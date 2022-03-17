@@ -1,0 +1,19 @@
+1.0.1:
+  - "Initialize plugin."
+1.0.2:
+  - "Created table beysong_wechat_user"
+  - builder_table_create_beysong_wechat_user.php
+  - "Created table beysong_wechat_autoreply"
+  - builder_table_create_beysong_wechat_autoreply.php
+  - "Created table beysong_wechat_menu"
+  - builder_table_create_beysong_wechat_menu.php
+1.0.3:
+  - "rollback"
+1.0.4:
+  - "Support Wechat Open Platform Website Application"
+1.0.5:
+  - "upgrade socialite"
+1.0.6:
+  - "hotfix"
+1.0.7:
+  - "hotfix"

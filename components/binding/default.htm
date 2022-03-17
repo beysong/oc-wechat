@@ -1,0 +1,49 @@
+{% if not user %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <a href="/user/login">To Bind After Sign in</a>
+    </div>
+  </div>
+</div>
+{% else %} {% if bindeduser %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <a data-request="onUnbindUser" href="">Unbind</a>
+    </div>
+  </div>
+</div>
+{% else %} {% if wechatuser %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- {{ dump(wechatuser) }} -->
+      <div>
+        {{ wechatuser.getName() }}
+      </div>
+      <div>
+        <img src="{{ wechatuser.getAvatar() }}" />
+      </div>
+      <br>
+      <div>
+        <button data-request="onBindUser" class="btn btn-default">
+          Confirm Bind
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- {{ dump(user) }} -->
+      <button data-request="onWechatAuthorize" class="btn btn-default">
+        Wechat Authorize
+      </button>
+    </div>
+  </div>
+</div>
+{% endif %} {% endif %} {% endif %}
