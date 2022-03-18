@@ -1,8 +1,9 @@
 <?php namespace Beysong\Wechat\Controllers;
 
+
+use EasyWeChat;
 use Backend\Classes\Controller;
 use BackendMenu;
-use Beysong\Wechat\Classes\WechatManager;
 use Beysong\Wechat\Models\WechatMenu as WechatMenuModel;
 
 class WechatMenu extends Controller
@@ -21,11 +22,13 @@ class WechatMenu extends Controller
     public function index()
     {
         parent::index();
-        $app = WechatManager::instance()->app();
-        
+        $app = EasyWeChat::officialAccount();
+       
         $list = $app->menu->list();
-        // dd($list);
+         
         $this->vars['menuList'] = $list;
+        // return '';
+        // dd($list);
         // $buttons = [
         //     [
         //         "type" => "click",
@@ -61,7 +64,7 @@ class WechatMenu extends Controller
 
     public function onSaveToWechat()
     {
-        $app = WechatManager::instance()->app();
+        $app = EasyWeChat::officialAccount();
         
         $list = $app->menu->list();
         
@@ -122,11 +125,7 @@ class WechatMenu extends Controller
                 }
             }
         }
-        // dd($buttons);
         $result = $app->menu->create($buttons);
-        // dd($result);
         return $result;
-        // $list = $app->menu->list();
-        // dd($list);
     }
 }

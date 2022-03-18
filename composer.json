@@ -20,5 +20,11 @@
     "overtrue/laravel-wechat": "^5.1",
     "overtrue/laravel-socialite": "~2.0",
     "rainlab/user-plugin": "~1.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "easywechat-composer/easywechat-composer": true,
+      "composer/installers": true
+    }
   }
 }

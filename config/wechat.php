@@ -1,4 +1,4 @@
-<?php
+<?php namespace Beysong\Wechat;
 
 use Beysong\Wechat\Models\Settings;
 

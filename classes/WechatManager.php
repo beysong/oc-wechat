@@ -1,8 +1,7 @@
 <?php namespace Beysong\Wechat\Classes;
 
+use EasyWeChat;
 use Beysong\Wechat\Models\Settings;
-
-// use EasyWeChat\Factory;
 
 class WechatManager
 {
@@ -33,7 +32,7 @@ class WechatManager
     //[1-2]生成微信公众号相关
     public function app()
     {
-        $app = \EasyWeChat::officialAccount();
+        $app = EasyWeChat::officialAccount();
         return $app;
     }
 
