@@ -1,6 +1,5 @@
 <?php namespace Beysong\Wechat;
 
-use Auth;
 use App;
 use Event;
 use Config;
@@ -8,7 +7,6 @@ use Session;
 use RainLab\User\Models\User;
 use System\Classes\PluginBase;
 use Illuminate\Foundation\AliasLoader;
-use Beysong\Wechat\Models\Settings;
 use Beysong\Wechat\Models\WechatUser;
 
 class Plugin extends PluginBase
@@ -51,26 +49,26 @@ class Plugin extends PluginBase
     public function register()
     {
         // Register the aliases provided by the packages used by your plugin
-        // App::registerClassAlias('EasyWeChat', \Overtrue\LaravelWeChat\Facade::class);
-        // App::registerClassAlias('EasySocialite', \Overtrue\LaravelSocialite\Socialite::class);
+        App::registerClassAlias('EasyWeChat', \Overtrue\LaravelWeChat\Facade::class);
+        App::registerClassAlias('EasySocialite', \Overtrue\LaravelSocialite\Socialite::class);
 
         // Register the service providers provided by the packages used by your plugin
-        // App::register(\Overtrue\LaravelWeChat\ServiceProvider::class);
-        // App::register(\Overtrue\LaravelSocialite\ServiceProvider::class);
+        App::register(\Overtrue\LaravelWeChat\ServiceProvider::class);
+        App::register(\Overtrue\LaravelSocialite\ServiceProvider::class);
     }
 
     public function boot()
     {
-        // dd(Config::get('beysong.wechat::wechat'));
         Config::set('wechat', Config::get('beysong.wechat::wechat'));
         Config::set('socialite', Config::get('beysong.wechat::socialite'));
 
-        $aliasLoader = AliasLoader::getInstance();
-        $aliasLoader->alias('EasyWeChat', '\Overtrue\LaravelWeChat\Facade');
-        $aliasLoader->alias('EasySocialite', '\Overtrue\LaravelSocialite\Socialite');
+        // dd(\Config::get('wechat'));
+        // $aliasLoader = AliasLoader::getInstance();
+        // $aliasLoader->alias('EasyWeChat', '\Overtrue\LaravelWeChat\Facade');
+        // $aliasLoader->alias('EasySocialite', '\Overtrue\LaravelSocialite\Socialite');
         
-        App::register('\Overtrue\LaravelWeChat\ServiceProvider');
-        App::register('\Overtrue\LaravelSocialite\ServiceProvider');
+        // App::register('\Overtrue\LaravelWeChat\ServiceProvider');
+        // App::register('\Overtrue\LaravelSocialite\ServiceProvider');
 
 
         // Setup required packages

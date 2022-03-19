@@ -61,10 +61,10 @@ return [
      */
     'official_account' => [
         'default' => [
-            'app_id' => Settings::get('appid', 5011),         // AppID
-            'secret' => Settings::get('secret', 5012),   // AppSecret
-            'token' => Settings::get('token', 5013),           // Token
-            'aes_key' => Settings::get('aes_key', 501),               // EncodingAESKey
+            'app_id' => Settings::get('appid', '5011'),         // AppID
+            'secret' => Settings::get('secret', '5012'),   // AppSecret
+            'token' => Settings::get('token', '5013'),           // Token
+            'aes_key' => Settings::get('aes_key', '501'),               // EncodingAESKey
 
             'oauth' => [
                 'scopes'   => array_map('trim', explode(',', env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_SCOPES', 'snsapi_userinfo'))),

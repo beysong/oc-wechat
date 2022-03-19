@@ -1,6 +1,6 @@
 <?php namespace Beysong\Wechat\Controllers;
 
-
+use Config;
 use EasyWeChat;
 use Backend\Classes\Controller;
 use BackendMenu;
@@ -22,8 +22,13 @@ class WechatMenu extends Controller
     public function index()
     {
         parent::index();
-        $app = EasyWeChat::officialAccount();
-       
+
+        // dd(Config::get('beysong.wechat::wechat.official_account.default'));
+        $config = Config::get('beysong.wechat::wechat.official_account.default');
+        
+        // $config = Config::get('beysong.wechat::wechat.official_account.default');
+        $app = \EasyWeChat::officialAccount();
+        // dd($app);
         $list = $app->menu->list();
          
         $this->vars['menuList'] = $list;

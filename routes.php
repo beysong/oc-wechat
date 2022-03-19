@@ -1,7 +1,5 @@
 <?php
 
-use EasyWeChat;
-use EasySocialite;
 use \RainLab\User\Facades\Auth as Auth;
 use Beysong\Wechat\Models\Settings;
 use October\Rain\Auth\Models\User;
@@ -14,7 +12,7 @@ Route::group([
     'prefix' => 'beysong/wechat',
 ], function () {
     Route::get('server', array('middleware' => ['web'], function () {
-        $wechat = EasyWeChat::officialAccount();
+        $wechat = \EasyWeChat::officialAccount();
         // 微信验证服务器
         // $response = $wechat->server->serve();
         // $response->send();exit;
@@ -124,7 +122,7 @@ Route::group([
         }
         
         if ($auth_type) {
-            return EasySocialite::driver($auth_type)->redirect();
+            return \EasySocialite::driver($auth_type)->redirect();
         } else {
             return response()->json('auth type can not be empty', 500);
         }
@@ -135,7 +133,7 @@ Route::group([
         $auth_type = Input::get('auth_type');
         $from = Input::get('from');
         //  dd(EasyWeChat::officialAccount());
-        $tempuser = EasySocialite::driver($auth_type)->user();
+        $tempuser = \EasySocialite::driver($auth_type)->user();
 
         Session::put('beysong.wechat.user', $tempuser);
 
