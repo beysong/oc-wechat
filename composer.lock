@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec812d431b14000daadaf1e55ea17b8b",
+    "content-hash": "9593c1f4a9e0cfa337fde30c6b17f9cb",
     "packages": [
         {
             "name": "composer/installers",
@@ -665,16 +665,16 @@
         },
         {
             "name": "overtrue/laravel-socialite",
-            "version": "3.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/laravel-socialite.git",
-                "reference": "71850ff874e9ff0a7678c6126e7816dfd2a45c1b"
+                "reference": "97f89759b8286c4a3bfbf22252cbcfebe9f3b910"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/overtrue/laravel-socialite/zipball/71850ff874e9ff0a7678c6126e7816dfd2a45c1b",
-                "reference": "71850ff874e9ff0a7678c6126e7816dfd2a45c1b",
+                "url": "https://api.github.com/repos/overtrue/laravel-socialite/zipball/97f89759b8286c4a3bfbf22252cbcfebe9f3b910",
+                "reference": "97f89759b8286c4a3bfbf22252cbcfebe9f3b910",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -684,7 +684,7 @@
                 ]
             },
             "require": {
-                "overtrue/socialite": "~3.0"
+                "overtrue/socialite": "~2.0"
             },
             "type": "library",
             "extra": {
@@ -715,22 +715,22 @@
             "description": "Social OAuth authentication for Laravel 5.",
             "support": {
                 "issues": "https://github.com/overtrue/laravel-socialite/issues",
-                "source": "https://github.com/overtrue/laravel-socialite/tree/3.0.0"
+                "source": "https://github.com/overtrue/laravel-socialite/tree/2.1.0"
             },
-            "time": "2020-10-09T10:15:33+00:00"
+            "time": "2019-04-06T08:08:41+00:00"
         },
         {
             "name": "overtrue/socialite",
-            "version": "3.5.1",
+            "version": "2.0.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/socialite.git",
-                "reference": "92cfd9989c37160f50720eeb7ca4a9914ba2c135"
+                "reference": "ee7e7b000ec7d64f2b8aba1f6a2eec5cdf3f8bec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/overtrue/socialite/zipball/92cfd9989c37160f50720eeb7ca4a9914ba2c135",
-                "reference": "92cfd9989c37160f50720eeb7ca4a9914ba2c135",
+                "url": "https://api.github.com/repos/overtrue/socialite/zipball/ee7e7b000ec7d64f2b8aba1f6a2eec5cdf3f8bec",
+                "reference": "ee7e7b000ec7d64f2b8aba1f6a2eec5cdf3f8bec",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -741,16 +741,13 @@
             },
             "require": {
                 "ext-json": "*",
-                "ext-openssl": "*",
-                "guzzlehttp/guzzle": "~6.0|~7.0",
-                "php": ">=7.4",
-                "symfony/http-foundation": "^5.0",
-                "symfony/psr-http-message-bridge": "^2.0"
+                "guzzlehttp/guzzle": "^5.0|^6.0|^7.0",
+                "php": ">=5.6",
+                "symfony/http-foundation": "^2.7|^3.0|^4.0|^5.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.0",
                 "mockery/mockery": "~1.2",
-                "phpunit/phpunit": "~9.0"
+                "phpunit/phpunit": "^6.0|^7.0|^8.0|^9.0"
             },
             "type": "library",
             "autoload": {
@@ -768,12 +765,10 @@
                     "email": "anzhengchao@gmail.com"
                 }
             ],
-            "description": "A collection of OAuth 2 packages.",
+            "description": "A collection of OAuth 2 packages that extracts from laravel/socialite.",
             "keywords": [
-                "Feishu",
                 "login",
                 "oauth",
-                "qcloud",
                 "qq",
                 "social",
                 "wechat",
@@ -781,28 +776,28 @@
             ],
             "support": {
                 "issues": "https://github.com/overtrue/socialite/issues",
-                "source": "https://github.com/overtrue/socialite/tree/3.5.1"
+                "source": "https://github.com/overtrue/socialite/tree/2.0.24"
             },
             "funding": [
                 {
-                    "url": "https://github.com/overtrue",
-                    "type": "github"
+                    "url": "https://www.patreon.com/overtrue",
+                    "type": "patreon"
                 }
             ],
-            "time": "2022-03-04T02:33:27+00:00"
+            "time": "2021-05-13T16:04:48+00:00"
         },
         {
             "name": "overtrue/wechat",
-            "version": "5.18.0",
+            "version": "4.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/w7corp/easywechat.git",
-                "reference": "fcabc4f0a7547713de9623f086ba486b87f4a433"
+                "reference": "04a940f97d6812a67bb8d5f2dbaebf9ad78ae776"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/w7corp/easywechat/zipball/fcabc4f0a7547713de9623f086ba486b87f4a433",
-                "reference": "fcabc4f0a7547713de9623f086ba486b87f4a433",
+                "url": "https://api.github.com/repos/w7corp/easywechat/zipball/04a940f97d6812a67bb8d5f2dbaebf9ad78ae776",
+                "reference": "04a940f97d6812a67bb8d5f2dbaebf9ad78ae776",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -814,42 +809,27 @@
             "require": {
                 "easywechat-composer/easywechat-composer": "^1.1",
                 "ext-fileinfo": "*",
-                "ext-libxml": "*",
                 "ext-openssl": "*",
                 "ext-simplexml": "*",
                 "guzzlehttp/guzzle": "^6.2 || ^7.0",
                 "monolog/monolog": "^1.22 || ^2.0",
-                "overtrue/socialite": "^3.2 || ^4.0",
-                "php": ">=7.4",
+                "overtrue/socialite": "~2.0",
+                "php": ">=7.2",
                 "pimple/pimple": "^3.0",
-                "psr/simple-cache": "^1.0||^2.0||^3.0",
-                "symfony/cache": "^3.3 || ^4.3 || ^5.0 || ^6.0",
-                "symfony/event-dispatcher": "^4.3 || ^5.0 || ^6.0",
-                "symfony/http-foundation": "^2.7 || ^3.0 || ^4.0 || ^5.0 || ^6.0",
+                "psr/simple-cache": "^1.0",
+                "symfony/cache": "^3.3 || ^4.3 || ^5.0",
+                "symfony/event-dispatcher": "^4.3 || ^5.0",
+                "symfony/http-foundation": "^2.7 || ^3.0 || ^4.0 || ^5.0",
                 "symfony/psr-http-message-bridge": "^0.3 || ^1.0 || ^2.0"
             },
             "require-dev": {
-                "brainmaestro/composer-git-hooks": "^2.7",
-                "dms/phpunit-arraysubset-asserts": "^0.2.0",
-                "friendsofphp/php-cs-fixer": "^3.5.0",
+                "friendsofphp/php-cs-fixer": "^2.15",
                 "mikey179/vfsstream": "^1.6",
                 "mockery/mockery": "^1.2.3",
                 "phpstan/phpstan": "^0.12.0",
-                "phpunit/phpunit": "^9.3"
+                "phpunit/phpunit": "^7.5"
             },
             "type": "library",
-            "extra": {
-                "hooks": {
-                    "pre-commit": [
-                        "composer test",
-                        "composer fix-style"
-                    ],
-                    "pre-push": [
-                        "composer test",
-                        "composer fix-style"
-                    ]
-                }
-            },
             "autoload": {
                 "files": [
                     "src/Kernel/Support/Helpers.php",
@@ -879,9 +859,15 @@
             ],
             "support": {
                 "issues": "https://github.com/w7corp/easywechat/issues",
-                "source": "https://github.com/w7corp/easywechat/tree/5.18.0"
+                "source": "https://github.com/w7corp/easywechat/tree/4.5.0"
             },
-            "time": "2022-03-02T09:54:10+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/overtrue",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-12-27T13:56:47+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -2534,7 +2520,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0.0"
+        "php": ">=7.4"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"

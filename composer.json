@@ -18,8 +18,8 @@
   "require": {
     "php": ">=7.4",
     "rainlab/user-plugin": "~1.0",
-    "overtrue/laravel-socialite": "^3",
-    "overtrue/wechat": "^5.0"
+    "overtrue/wechat": "^4.2",
+    "overtrue/laravel-socialite": "~2.0"
   },
   "config": {
     "allow-plugins": {
