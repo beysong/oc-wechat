@@ -1,7 +1,7 @@
 <?php namespace Beysong\Wechat\Controllers;
 
 use Config;
-use EasyWeChat;
+use EasyWeChat\Factory;
 use Backend\Classes\Controller;
 use BackendMenu;
 use Beysong\Wechat\Models\WechatMenu as WechatMenuModel;
@@ -27,7 +27,7 @@ class WechatMenu extends Controller
         $config = Config::get('beysong.wechat::wechat.official_account.default');
         
         // $config = Config::get('beysong.wechat::wechat.official_account.default');
-        $app = \EasyWeChat::officialAccount();
+        $app = Factory::officialAccount($config);
         // dd($app);
         $list = $app->menu->list();
          
@@ -69,7 +69,11 @@ class WechatMenu extends Controller
 
     public function onSaveToWechat()
     {
-        $app = EasyWeChat::officialAccount();
+
+        $config = Config::get('beysong.wechat::wechat.official_account.default');
+        
+        // $config = Config::get('beysong.wechat::wechat.official_account.default');
+        $app = Factory::officialAccount($config);
         
         $list = $app->menu->list();
         

@@ -71,18 +71,6 @@ return [
                 'callback' => '/beysong/wechat/callback?auth_type=wechat',
                 // 'callback' => \Request::path(),
             ],
-            /*
-             * OAuth 配置
-             *
-             * scopes：公众平台（snsapi_userinfo / snsapi_base），开放平台：snsapi_login
-             * callback：OAuth授权完成后的回调页地址(如果使用中间件，则随便填写。。。)
-             * enforce_https：是否强制使用 HTTPS 跳转
-             */
-            // 'oauth'   => [
-            //     'scopes'        => array_map('trim', explode(',', env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_SCOPES', 'snsapi_userinfo'))),
-            //     'callback'      => env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_CALLBACK', '/examples/oauth_callback.php'),
-            //     'enforce_https' => true,
-            // ],
         ],
     ],
 
@@ -95,6 +83,18 @@ return [
             'secret' => Settings::get('open_secret', 5012),   // AppSecret
             'token' => Settings::get('open_token', 5013),           // Token
             'aes_key' => Settings::get('aes_key', 501),               // EncodingAESKey
+
+            'oauth' => [
+                'scopes'   => array_map('trim', explode(',', env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_SCOPES', 'snsapi_userinfo'))),
+                'callback' => '/beysong/wechat/callback?auth_type=wechat',
+                // 'callback' => \Request::path(),
+            ],
+        ],
+        'wechat' => [
+            'app_id' => '2',         // AppID
+            'secret' => '23',   // AppSecret
+            'token' => '34',           // Token
+            'aes_key' => '45',               // EncodingAESKey
 
             'oauth' => [
                 'scopes'   => array_map('trim', explode(',', env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_SCOPES', 'snsapi_userinfo'))),

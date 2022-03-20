@@ -5,6 +5,8 @@ use Beysong\Wechat\Models\Settings;
 use October\Rain\Auth\Models\User;
 use Beysong\Wechat\Models\WechatUser;
 
+use EasyWeChat\Factory as EasyWeChat;
+
 ini_set('display_errors','On');
 error_reporting(-1);
 
@@ -12,7 +14,7 @@ Route::group([
     'prefix' => 'beysong/wechat',
 ], function () {
     Route::get('server', array('middleware' => ['web'], function () {
-        $wechat = \EasyWeChat::officialAccount();
+        $wechat = EasyWeChat::officialAccount();
         // 微信验证服务器
         // $response = $wechat->server->serve();
         // $response->send();exit;
