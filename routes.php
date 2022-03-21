@@ -1,20 +1,24 @@
 <?php
 
+use Config;
 use \RainLab\User\Facades\Auth as Auth;
-use Beysong\Wechat\Models\Settings;
-use October\Rain\Auth\Models\User;
 use Beysong\Wechat\Models\WechatUser;
 
 use EasyWeChat\Factory as EasyWeChat;
+use EasySocialite;
 
-ini_set('display_errors','On');
-error_reporting(-1);
+// ini_set('display_errors','On');
+// error_reporting(-1);
+
 
 Route::group([
     'prefix' => 'beysong/wechat',
 ], function () {
+
+
     Route::get('server', array('middleware' => ['web'], function () {
-        $wechat = EasyWeChat::officialAccount();
+        $config = Config::get('beysong.wechat::wechat.official_account.default');
+        $wechat = EasyWeChat::officialAccount($config);
         // 微信验证服务器
         // $response = $wechat->server->serve();
         // $response->send();exit;
@@ -55,21 +59,24 @@ Route::group([
         return $wechat->server->serve();
     }));
     Route::get('auth', array('middleware' => ['web'], function () {
+
+        $config = Config::get('beysong.wechat::wechat.official_account.default');
         $redirectUrl = Input::get('r', '/');
         if ($redirectUrl) {
             Session::put('beysong.wechat.redirect_url', $redirectUrl);
         }
 
-        $wechat = EasyWeChat::officialAccount();
-        // dd($wechat);
+        $wechat = EasyWeChat::officialAccount($config);
+        
         $oauth = $wechat->oauth;
         return $oauth->redirect();
     }));
     Route::get('callback', array('middleware' => ['web'], function () {
-        // dd($tempuser);
+         
+        $config = Config::get('beysong.wechat::wechat.official_account.default');
         $redirectUrl = Session::get('beysong.wechat.redirect_url');
 
-        $wechat = EasyWeChat::officialAccount();
+        $wechat = EasyWeChat::officialAccount($config);
         $oauth = $wechat->oauth;
        
         $jscode = Input::get('code');
@@ -77,17 +84,12 @@ Route::group([
 
         if ($jscode && $jsstate) {
            
-            
             $tempuser = $oauth->user();
-
-            // dd($wechat);
-            // return '';
+ 
             Session::put('beysong.wechat.user', $tempuser);
-            //  dd($tempuser->id);
-// return '';
+ 
             $authUser = WechatUser::where(['oauth_id' => $tempuser->id,'oauth_type' => 'wechat'])->first();
-// dd($authUser);
-// return '';
+ 
             if (empty($authUser)) {
                 $authUser = new WechatUser();
                 $authUser['oauth_id'] = $tempuser->id;
@@ -124,7 +126,7 @@ Route::group([
         }
         
         if ($auth_type) {
-            return \EasySocialite::driver($auth_type)->redirect();
+            return EasySocialite::driver($auth_type)->redirect();
         } else {
             return response()->json('auth type can not be empty', 500);
         }
@@ -134,8 +136,8 @@ Route::group([
         $redirectUrl = Session::get('beysong.wechat.redirect_url');
         $auth_type = Input::get('auth_type');
         $from = Input::get('from');
-        //  dd(EasyWeChat::officialAccount());
-        $tempuser = \EasySocialite::driver($auth_type)->user();
+         
+        $tempuser = EasySocialite::driver($auth_type)->user();
 
         Session::put('beysong.wechat.user', $tempuser);
 

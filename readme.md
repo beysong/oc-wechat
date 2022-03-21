@@ -1,23 +1,23 @@
-## 插件设置
+Relies on Rainlab.User
 
-**Settings > Misc > Weixin Login**设置公众号，开放平台等 appid secret
+# Plugin Setting
 
-## 公众号菜单管理
+**Settings > Misc > Weixin Login** set the appid and secret of Offical Account and Open Platform
 
-    可接管公众号菜单管理
+# Authorize
 
-## 简单的自动回复设置
+## Authorize in Wechat App environment
 
-    关键字回复设置
+Authorize url: [your domain]/beysong/wechat/auth
 
-## 微信环境授权
+## Authorize with Wechat Open Platform
 
-authorize url: [your domain]/beysong/wechat/auth
+Authorize url: [your domain]/beysong/wechat/open
 
-## 微信开放平台网站应用登录
+After authorize successfully, the user account will bind the Wechat User by openid If the user account has logined in.
+Otherwhise the bind action will execute after the user accout login.
+The user can login by Wechat Authorize next time.
 
-authorize url: [your domain]/beysong/wechat/open
+# TODO
 
-## TODO
-
-- wechat share
+- Wechat Share

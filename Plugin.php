@@ -49,24 +49,18 @@ class Plugin extends PluginBase
     public function register()
     {
 
-        // dd('in plugin');
         // Register the aliases provided by the packages used by your plugin
-        // App::registerClassAlias('EasyWeChat', \Overtrue\LaravelWeChat\Facade::class);
         App::registerClassAlias('EasySocialite', \Overtrue\LaravelSocialite\Socialite::class);
 
         // Register the service providers provided by the packages used by your plugin
-        // App::register(\Overtrue\LaravelWeChat\ServiceProvider::class);
         App::register(\Overtrue\LaravelSocialite\ServiceProvider::class);
     }
 
     public function boot()
     {
 
-        // Config::set('wechat', Config::get('beysong.wechat::wechat'));
         Config::set('socialite', Config::get('beysong.wechat::socialite'));
             
-        // dd(Config::get('wechat'));
-
         // Setup required packages
         User::extend(function ($model) {
             $model->hasOne['beysong_wechat_user'] = ['Beysong\Wechat\Models\WechatUser'];
