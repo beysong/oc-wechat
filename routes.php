@@ -1,6 +1,5 @@
 <?php
 
-use Config;
 use \RainLab\User\Facades\Auth as Auth;
 use Beysong\Wechat\Models\WechatUser;
 
