@@ -18,6 +18,10 @@ After authorize successfully, the user account will bind the Wechat User by open
 Otherwhise the bind action will execute after the user accout login.
 The user can login by Wechat Authorize next time.
 
+# WeChat share Component
+
+Just fill share data
+
 # Usage
 
 - install the plugin: `php artisan plugin:install Beysong.Wechat` or `composer require beysong/wechat-plugin`
@@ -29,7 +33,3 @@ The user can login by Wechat Authorize next time.
 ```
 
 the params 'r' for binded user redirect url.
-
-# TODO
-
-- Wechat Share

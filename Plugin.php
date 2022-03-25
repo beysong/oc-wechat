@@ -29,6 +29,7 @@ class Plugin extends PluginBase
         return [
             // 'Beysong\Wechat\Components\Binding' => 'Binding',
             // 'Beysong\Wechat\Components\QrcodeLogin' => 'QrcodeLogin',
+            'Beysong\Wechat\Components\ShareSetting' => 'ShareSetting',
         ];
     }
 

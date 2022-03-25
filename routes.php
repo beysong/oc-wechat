@@ -168,4 +168,15 @@ Route::group([
         }
         return Redirect::to($redirectUrl);
     }));
+
+    // wechat js config
+    Route::get('jsconfig', array('middleware' => ['web'], function () {
+        $url = Input::get('url');
+        $config = Config::get('beysong.wechat::wechat.official_account.default');
+        $app = EasyWeChat::officialAccount($config);
+        $app->jssdk->setUrl($url);
+        return $app->jssdk->buildConfig(array('updateAppMessageShareData', 'updateTimelineShareData'), false, false, false);
+    }));
+
+
 });
