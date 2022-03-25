@@ -4,7 +4,6 @@ use \RainLab\User\Facades\Auth as Auth;
 use Beysong\Wechat\Models\WechatUser;
 
 use EasyWeChat\Factory as EasyWeChat;
-use EasySocialite;
 
 // ini_set('display_errors','On');
 // error_reporting(-1);
