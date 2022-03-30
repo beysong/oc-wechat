@@ -77,4 +77,49 @@ class Plugin extends PluginBase
         });
     }
  
+    public function registerMarkupTags()
+    {
+        return [
+            'filters' => [
+                'hex2hsl' => [$this, 'hexToHsl']
+            ]
+        ];
+    }
+
+    public function hexToHsl($hex) {
+        $hex = array(substr($hex, 1, 2), substr($hex, 3, 2), substr($hex, 5, 2));
+        $rgb = array_map(function($part) {
+            return hexdec($part) / 255;
+        }, $hex);
+
+        $max = max($rgb);
+        $min = min($rgb);
+
+        $l = ($max + $min) / 2;
+
+        if ($max == $min) {
+            $h = $s = 0;
+        } else {
+            $diff = $max - $min;
+            $s = $l > 0.5 ? $diff / (2 - $max - $min) : $diff / ($max + $min);
+
+            switch($max) {
+                case $rgb[0]:
+                    $h = ($rgb[1] - $rgb[2]) / $diff + ($rgb[1] < $rgb[2] ? 6 : 0);
+                    break;
+                case $rgb[1]:
+                    $h = ($rgb[2] - $rgb[0]) / $diff + 2;
+                    break;
+                case $rgb[2]:
+                    $h = ($rgb[0] - $rgb[1]) / $diff + 4;
+                    break;
+            }
+
+            $h /= 6;
+        }
+        
+        return ($h*360).' '.($s*100).'% '.($l*100).'%';
+        
+    }
+
 }
