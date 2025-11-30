@@ -127,8 +127,8 @@ return [
      */
     'work' => [
         'default' => [
-            'corp_id'    => env('WECHAT_WORK_CORP_ID', 'wwebc475fe117f9f8c'),
-            'secret'     => env('WECHAT_WORK_SECRET', 'N9UH8ZnNztY3DQUefI2C-DTesgniU9LToMrikpWnaCo'),
+            'corp_id'    => env('WECHAT_WORK_CORP_ID', ''),
+            'secret'     => env('WECHAT_WORK_SECRET', ''),
             'token'      => env('WECHAT_WORK_TOKEN', ''),
             'aes_key'    => env('WECHAT_WORK_AES_KEY', ''),
 
