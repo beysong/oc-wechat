@@ -1,0 +1,24 @@
+{
+    "name": "beysong/wechat-plugin",
+    "type": "october-plugin",
+    "description": "Wechat plugin",
+    "keywords": ["october", "cms", "wechat", "plugin"],
+    "authors": [
+        {
+            "name": "Beysong",
+            "email": "beywsong@gmail.com",
+            "role": "Co-founder"
+        }
+    ],
+    "require": {
+        "php": ">=8.1.9",
+        "composer/installers": "~1.0",
+        "overtrue/laravel-wechat": "^7.2",
+        "overtrue/laravel-socialite": "^4.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
